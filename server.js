@@ -1,6 +1,9 @@
-const express = require("express");
+import express from "express";
+import { add, multiply } from "./pages/sum.js";
 const app = express();
 const PORT = 5400;
+console.log(add(2, 4));
+console.log(multiply(2, 2));
 app.get("/", (req, res) => {
   res.send("Express Server Running ");
 });

@@ -14,6 +14,10 @@ app.get("/about", (req, res) => {
   const absPath = path.resolve("view/file/about.html");
   res.sendFile(absPath);
 });
+app.use((req, res) => {
+  const absPath = path.resolve("view/file/404.html");
+  res.sendFile(absPath);
+});
 app.listen(PORT, () => {
   console.log(`server is running on ${PORT}`);
 });

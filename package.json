@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node pages/htmlform.js",
-    "dev": "nodemon pages/htmlform.js"
+    "start": "node view/view.js",
+    "dev": "nodemon view/view.js"
   },
   "keywords": [],
   "author": "",

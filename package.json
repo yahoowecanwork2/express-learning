@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node view/view.js",
-    "dev": "nodemon view/view.js"
+    "start": "node pages/middleware/middleware.js",
+    "dev": "nodemon pages/middleware/middleware.js"
   },
   "keywords": [],
   "author": "",

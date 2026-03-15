@@ -1,6 +1,8 @@
 import { resolve } from "dns";
 import express from "express";
 import path from "path";
+import morgan from "morgan";
+
 const app = express();
 const PORT = 5400;
 
@@ -13,6 +15,7 @@ function checkAgeRouteMiddleware(req, resp, next) {
 }
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
+app.use(morgan("dev"));
 app.get("/", (req, res) => {
   const absolutpath = path.resolve("./view/file/home.html");
   res.sendFile(absolutpath);

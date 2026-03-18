@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node pages/enginetemplates/ejs.js",
-    "dev": "nodemon pages/enginetemplates/ejs.js"
+    "start": "node pages/enginetemplates/formwithejs.js",
+    "dev": "nodemon pages/enginetemplates/formwithejs.js"
   },
   "keywords": [],
   "author": "",

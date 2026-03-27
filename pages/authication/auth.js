@@ -1,13 +1,17 @@
 import cookieParser from "cookie-parser";
 import express from "express";
+import bcrypt from "bcrypt";
+import jwt from "jwt";
 const app = express();
 const PORT = 5400;
-import bcrypt from "bcrypt";
+
 // app.use(cookieParser());
 app.get("/", (req, res) => {
-  res.cookie("name", "neha");
-  bcrypt.genSalt(saltRounds, function (err, salt) {
-    bcrypt.hash(myPlaintextPassword, salt, function (err, hash) {
+  //   res.cookie("name", "neha");
+  bcrypt.genSalt(10, function (err, salt) {
+    bcrypt.hash("pololololo", salt, function (err, hash) {
+      console.log(hash);
+
       // Store hash in your password DB.
     });
   });

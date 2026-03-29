@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node pages/authication/auth.js",
-    "dev": "nodemon pages/authication/auth.js"
+    "start": "node pages/mongoose/dbConnect.js",
+    "dev": "nodemon pages/mongoose/dbConnect.js"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +18,7 @@
     "ejs": "^5.0.1",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.3.3",
     "morgan": "^1.10.1"
   },
   "devDependencies": {

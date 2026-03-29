@@ -19,11 +19,22 @@ const PORT = 5400;
 await mongoose.connect("mongodb://localhost:27017/ecommers").then(() => {
   console.log(".........connected........");
 });
-
+app.use(express.json());
 app.get("/", async (req, res) => {
   const userData = await userModal.find();
 
   res.send(userData);
+});
+app.post("/save", async (req, res) => {
+  //   const userData = await userModal.find();
+  console.log(req.body);
+  const userData = await userModal.create(req.body);
+
+  res.send({
+    massage: "data saved",
+    success: true,
+    storInfo: userData,
+  });
 });
 app.listen(PORT, () => {
   console.log(`server is running on ${PORT}`);

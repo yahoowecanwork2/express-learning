@@ -29,11 +29,29 @@ app.post("/save", async (req, res) => {
   //   const userData = await userModal.find();
   console.log(req.body);
   const userData = await userModal.create(req.body);
-
+  const { name, age, email } = req.body;
+  if (!req.body || !name || !age || !email) {
+    res.send({
+      massage: "data not saved",
+      success: false,
+      storInfo: null,
+    });
+  }
   res.send({
     massage: "data saved",
     success: true,
     storInfo: userData,
+  });
+});
+app.put("/update/:id", async (req, res) => {
+  const id = req.params.id;
+  console.log(req.body, id);
+  const userData = await userModal.findByIdAndUpdate(id, { ...req.body });
+
+  res.send({
+    massage: "data update",
+    success: true,
+    info: userData,
   });
 });
 app.listen(PORT, () => {

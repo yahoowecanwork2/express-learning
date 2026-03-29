@@ -54,6 +54,16 @@ app.put("/update/:id", async (req, res) => {
     info: userData,
   });
 });
+app.delete("/delete/:id", async (req, res) => {
+  const id = req.params.id;
+  const userData = await userModal.findByIdAndDelete(id);
+
+  res.send({
+    massage: "data deleted",
+    success: true,
+    info: userData,
+  });
+});
 app.listen(PORT, () => {
   console.log(`server is running on ${PORT}`);
 });
